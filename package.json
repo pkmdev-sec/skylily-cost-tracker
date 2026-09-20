@@ -1,0 +1,80 @@
+{
+  "name": "skylily-cost-tracker",
+  "version": "1.0.0",
+  "description": "Track and optimize LLM API costs across multiple providers - OpenAI, Anthropic, Google, and more",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "bin": {
+    "cost-tracker": "dist/cli.js"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE",
+    "CHANGELOG.md"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "pretest": "npm run build",
+    "dev": "tsc --watch",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage",
+    "lint": "eslint src tests",
+    "typecheck": "tsc --noEmit",
+    "prepublishOnly": "npm run build && npm test",
+    "clean": "rm -rf dist",
+    "example:basic": "tsx examples/basic-usage.ts",
+    "example:budget": "tsx examples/budget-alerts.ts",
+    "example:export": "tsx examples/export-import.ts"
+  },
+  "keywords": [
+    "cost",
+    "tracking",
+    "llm",
+    "api",
+    "openai",
+    "anthropic",
+    "claude",
+    "gpt",
+    "gemini",
+    "google",
+    "perplexity",
+    "tokens",
+    "usage",
+    "billing",
+    "monitoring",
+    "budget",
+    "ai",
+    "machine-learning",
+    "chatgpt",
+    "langchain"
+  ],
+  "author": "Skylily 🌸",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/skylily/skylily-cost-tracker.git"
+  },
+  "bugs": {
+    "url": "https://github.com/skylily/skylily-cost-tracker/issues"
+  },
+  "homepage": "https://github.com/skylily/skylily-cost-tracker#readme",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "@vitest/coverage-v8": "^3.0.0",
+    "tsx": "^4.19.0",
+    "typescript": "^5.7.0",
+    "vitest": "^3.0.0"
+  }
+}
